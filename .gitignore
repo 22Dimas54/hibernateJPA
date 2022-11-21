@@ -68,3 +68,6 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
+/.mvn
+mvnw
+mvnw.cmd

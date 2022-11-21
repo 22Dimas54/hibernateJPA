@@ -15,7 +15,13 @@ public class HibernateController {
     private HibernateService hibernateService;
 
     @GetMapping("/persons/by-city")
-    public List<Persons> handlerController(@RequestParam("city") String city) {
-        return hibernateService.handlerService(city);
+    public List<Persons> handlerCity(@RequestParam("city") String city) {
+        return hibernateService.handlerServiceCity(city);
     }
+
+    @GetMapping("/products/fetch-product")
+    public List<String> handlerCustomer(@RequestParam("name") String name) {
+        return hibernateService.handlerServiceCustomer(name);
+    }
+
 }

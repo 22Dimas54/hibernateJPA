@@ -11,7 +11,12 @@ import java.util.List;
 public class HibernateService {
     @Autowired
     private HibernateRepository hibernateRepository;
-    public List<Persons> handlerService(String city) {
+
+    public List<Persons> handlerServiceCity(String city) {
         return hibernateRepository.getPersonsByCity(city);
+    }
+
+    public List<String> handlerServiceCustomer(String name) {
+        return hibernateRepository.getProductName(name);
     }
 }
