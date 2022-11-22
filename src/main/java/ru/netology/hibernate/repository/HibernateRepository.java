@@ -22,7 +22,8 @@ import java.util.stream.Stream;
 
 @Repository
 public class HibernateRepository {
-    private final String SCRIPT_FILE_NAME = "myScript.sql";
+    private final String SCRIPT_FILE_NAME = "myScriptGetProductName.sql";
+    private final String SCRIPT_FILE_GET_PRODUCT_NAME = "myScriptGetProductName.sql";
     private final int AGE = 93;
 
     private static final List<String> NAMES = List.of("Дмитрий", "Алексей", "Олег", "Николай", "Иван");
@@ -82,13 +83,12 @@ public class HibernateRepository {
 
     @Transactional
     public List<String> getProductName(String name) {
-        creatingDefaultCustomers(entityManager);
-        creatingDefaultOrders(entityManager);
+//        creatingDefaultCustomers(entityManager);
+//        creatingDefaultOrders(entityManager);
 
-//        Query query = entityManager.createQuery(read(SCRIPT_FILE_NAME));
-//        query.setParameter("nameCustomer", name.toLowerCase());
-//        return query.getResultList();
-        return new ArrayList<String>();
+        Query query = entityManager.createQuery(read(SCRIPT_FILE_GET_PRODUCT_NAME));
+        query.setParameter("nameCustomer", name.toLowerCase());
+        return query.getResultList();
     }
 
     private void creatingDefaultOrders(EntityManager entityManager) {
