@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - includeXml:
+    file: migrations/PERSONS.xml
+    relativeToChangelogFile: true
