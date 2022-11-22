@@ -22,7 +22,7 @@ import java.util.stream.Stream;
 
 @Repository
 public class HibernateRepository {
-    private final String SCRIPT_FILE_NAME = "myScriptGetProductName.sql";
+    private final String SCRIPT_FILE_NAME = "myScript.sql";
     private final String SCRIPT_FILE_GET_PRODUCT_NAME = "myScriptGetProductName.sql";
     private final int AGE = 93;
 
