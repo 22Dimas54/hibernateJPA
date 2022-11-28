@@ -1,6 +1,5 @@
 package ru.netology.hibernate.controller;
 
-import javafx.scene.control.skin.SliderSkin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,5 +64,15 @@ public class HibernateController {
     @GetMapping("/persons/find-name-surname")
     public Optional<Persons> findByNameSurnameController(@RequestParam("name") String name, @RequestParam("surname") String surname) {
         return hibernateService.findByNameSurname(name, surname);
+    }
+
+    @GetMapping("/anyRequest")
+    public String anyRequest() {
+        return "any request";
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
     }
 }
